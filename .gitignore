@@ -1,0 +1,3 @@
+#to ignore update to git repositry
+.env
+node_modules/
