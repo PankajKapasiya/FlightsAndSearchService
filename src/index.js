@@ -1,6 +1,6 @@
 const  express= require("express");
 
-const {PORT} =require('./config/serverconfig');
+const {PORT} =require('../config/serverconfig');
 const setupAndSartServer =async ()=>{
 
     // create the express object
