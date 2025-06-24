@@ -52,9 +52,10 @@ class CityService{
         }     
     }
 
-    async getallcities(){
+    async getallcities(filter){
         try{
-            const city=await this.CityRepository.getAllcities();
+            console.log(filter);
+            const city=await this.CityRepository.getAllcities({name : filter.name});
             return city;
         }
         catch(error){

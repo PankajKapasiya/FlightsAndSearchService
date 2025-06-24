@@ -89,11 +89,11 @@ const update=async (req,res) =>{
             err :error
         })
     }
-}
+}   
 
 const getall=async (req,res) =>{
     try{
-        const cities= await cityservice.getallcities();
+        const cities= await cityservice.getallcities(req.body);
 
         return res.status(200).json({
             data:cities,
