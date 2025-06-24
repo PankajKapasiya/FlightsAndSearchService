@@ -1,6 +1,5 @@
 const {City} = require('../models/index');
 
-
 class CityRepository{
     async createCity({name}){
         try{
@@ -29,13 +28,13 @@ class CityRepository{
         }
     }
 
-    async updateCity(cityId, data){
+    async updateCity(cityId, data){ // {name: "prayagraj"}
         try{
             const city=await City.update(data, {
                 where:{
                     id:cityId
                 }
-            })
+            });
 
             return city;
         }
@@ -48,7 +47,18 @@ class CityRepository{
 
     async getCity(cityId){
         try{
-            const city=await City.findByPK(cityId);
+            const city=await City.findByPk(cityId);
+            return city;
+        }
+        catch(error){
+            console.log("Something went wrong");
+            throw(error);
+        }
+    }
+
+    async getAllcities(){
+        try{
+            const city=await City.findAll();
             return city;
         }
         catch(error){

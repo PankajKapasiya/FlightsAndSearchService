@@ -1,6 +1,5 @@
 const {CityRepository}=require('../repository/index');
-
-
+    
 class CityService{
 
     constructor(){
@@ -20,7 +19,6 @@ class CityService{
     }
 
     async  deleteCity(cityId){
-
         try{
             const response=await this.CityRepository.deleteCity(cityId);
 
@@ -51,8 +49,18 @@ class CityService{
         catch(error){
             console.log("something went wrong");
             throw{error};
+        }     
+    }
+
+    async getallcities(){
+        try{
+            const city=await this.CityRepository.getAllcities();
+            return city;
         }
-            
+        catch(error){
+            console.log("something went wrong");
+            throw(error);
+        }
     }
 }
 
