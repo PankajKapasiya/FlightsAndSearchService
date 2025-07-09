@@ -5,7 +5,7 @@ const PORT=3000;
 const {City} =require('./models/index');
 
 const CityRepository= require('./repository/city_repository')
-
+const {Airplane} =require('./models/index');
 const ApiRoutes = require('./routes/index');
 const bodyParser = require("body-parser");
 const setupAndStartServer =async ()=>{
@@ -20,7 +20,12 @@ const setupAndStartServer =async ()=>{
 
     app.listen(PORT, async ()=>{
         console.log(`Server started at ${PORT}`);
+
+        await Airplane.create({
+            modelNumber: 'Bombardier CRJ'
+        }); 
     }); 
+
 }
 
 setupAndStartServer();
