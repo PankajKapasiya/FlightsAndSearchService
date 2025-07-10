@@ -21,9 +21,9 @@ const setupAndStartServer =async ()=>{
     app.listen(PORT, async ()=>{
         console.log(`Server started at ${PORT}`);
 
-        await Airplane.create({
-            modelNumber: 'Bombardier CRJ'
-        }); 
+        // await Airplane.create({
+        //     modelNumber: 'Bombardier CRJ'
+        // }); 
     }); 
 
 }
